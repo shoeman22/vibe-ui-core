@@ -44,7 +44,7 @@ class Example extends React.Component {
 }
 
 Example.propTypes = {
-  example: PropTypes.object.isRequired,
+  example: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   componentName: PropTypes.string.isRequired
 };
 
