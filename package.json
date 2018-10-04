@@ -99,6 +99,7 @@
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.5",
     "chokidar": "^2.0.4",
+    "cross-env": "^5.2.0",
     "eslint": "^5.6.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.0.1",
