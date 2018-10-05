@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for Label component Check snapshot 1`] = `
+<label
+  htmlFor="testInput"
+  style={
+    Object {
+      "display": "block",
+    }
+  }
+>
+  Test Label
+</label>
+`;
