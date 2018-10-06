@@ -66,6 +66,9 @@ typings/
 # built docs
 /docs
 
+# don't commit build folder
+/build/*
+
 # Generated component data
 /config/componentData.js
 

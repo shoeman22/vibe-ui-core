@@ -8,8 +8,8 @@ cache:
     - node_modules
 
 script:
-  - npm test -- --coverage
-  - npm run build
+  - npm coverage
+  - npm run build:docs
 
 after_script: # Upload coverage reports
   - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
