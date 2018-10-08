@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /** Label with required field display, htmlFor, and block styling */
-function Label({ htmlFor, label, required }) {
+function Label({ htmlFor, label, required, requiredDotColor }) {
   return (
     <label style={{ display: "block" }} htmlFor={htmlFor}>
       {label}
-      {required && <span style={{ color: "red" }}> *</span>}
+      {required && <span style={{ color: requiredDotColor }}> *</span>}
     </label>
   );
 }
@@ -19,11 +19,15 @@ Label.propTypes = {
   label: PropTypes.string.isRequired,
 
   /** Display asterisk after label if true */
-  required: PropTypes.bool
+  required: PropTypes.bool,
+
+  /** Color for required dot */
+  requiredDotColor: PropTypes.string
 };
 
 Label.defaultProps = {
-  required: false
+  required: false,
+  requiredDotColor: "red"
 };
 
 export default Label;
