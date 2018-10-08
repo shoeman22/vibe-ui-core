@@ -1,20 +1,30 @@
 {
-  "name": "vibe-ui-core",
-  "homepage": "https://shoeman22.github.io/vibe-ui-core/",
+  "name": "vibe-ui-core-test",
+  "homepage": "http://shoeman22.github.io/vibe-ui-core/",
   "version": "0.1.0",
+  "main": "./lib/index.js",
   "private": true,
   "engines": {
     "node": ">=10.11.0"
   },
+  "author": {
+    "name": "Andy Schuler",
+    "email": "andy@leftshoedevelopment.com",
+    "url": "http://shoeman22.github.io/vibe-ui-core/"
+  },
+  "files": [
+    "lib"
+  ],
+  "keyword": [
+    "vibes",
+    "icentris"
+  ],
   "dependencies": {
     "highlight.js": "^9.12.0",
     "object-assign": "4.1.1",
     "promise": "8.0.1",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "resolve": "1.6.0",
-    "style-loader": "0.19.0",
-    "url-loader": "0.6.2"
+    "react-dom": "^16.5.2"
   },
   "scripts": {
     "build": "node scripts/build.js",
@@ -30,13 +40,15 @@
     "predeploy:docs": "npm run build:docs",
     "deploy:docs": "gh-pages -d build",
     "prebuild:lib": "rimraf lib",
-    "build:lib": "npm-run-all build:commonjs build:css build:copy-files",
+    "build:lib": "npm-run-all build:commonjs build:es build:css build:copy-files",
     "build:copy-files": "node scripts/copyBuildFiles.js",
     "build:commonjs": "cross-env NODE_ENV=production babel ./src/components --out-dir ./lib --ignore spec.js",
+    "build:es": "cross-env BABEL_MODULE_MODE=es NODE_ENV=production babel ./src/components --out-dir ./lib/index.es.js --ignore spec.js",
     "build:css": "cpx \"./src/components/**/*.css\" ./lib",
-    "prepublish": "npm run build:lib",
     "coverage": "npm run test -- --coverage",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
+    "prepublish": "npm run build:lib",
+    "publish": ""
   },
   "jest": {
     "collectCoverageFrom": [
@@ -74,6 +86,12 @@
   },
   "babel": {
     "presets": [
+      [
+        "env",
+        {
+          "modules": "commonjs"
+        }
+      ],
       "react-app"
     ]
   },
@@ -84,6 +102,7 @@
     "babel-eslint": "^7.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "^7.1.5",
+    "babel-preset-latest": "^6.24.1",
     "babel-preset-react-app": "^3.1.2",
     "babel-runtime": "^6.26.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
@@ -122,7 +141,10 @@
     "react-dev-utils": "^5.0.2",
     "react-docgen": "^2.21.0",
     "react-test-renderer": "^16.5.2",
+    "resolve": "1.6.0",
+    "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
+    "url-loader": "0.6.2",
     "webpack": "3.8.1",
     "webpack-dev-server": "2.11.3",
     "webpack-manifest-plugin": "1.3.2",

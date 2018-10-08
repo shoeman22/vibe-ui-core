@@ -7,9 +7,10 @@ const ManifestPlugin = require("webpack-manifest-plugin");
 const InterpolateHtmlPlugin = require("react-dev-utils/InterpolateHtmlPlugin");
 const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
 const eslintFormatter = require("react-dev-utils/eslintFormatter");
-// const ModuleScopePlugin = require("react-dev-utils/ModuleScopePlugin");
+const merge = require("webpack-merge");
 const paths = require("./paths");
 const getClientEnvironment = require("./env");
+const baseConfig = require("./webpack.config.base");
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -47,7 +48,7 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
 // The development configuration is different and lives in a separate file.
-module.exports = {
+module.exports = merge(baseConfig, {
   // Don't attempt to continue if there are any errors.
   bail: true,
   // We generate sourcemaps in production. This is slow but gives good results.
@@ -85,12 +86,6 @@ module.exports = {
     // `web` extension prefixes have been added for better support
     // for React Native Web.
     extensions: [".web.js", ".mjs", ".js", ".json", ".web.jsx", ".jsx"],
-    alias: {
-      // Support React Native Web
-      // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      "react-native": "react-native-web",
-      "vibe-ui-core": path.resolve(__dirname, "../src/components")
-    },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
       // This often causes confusion because we only process files within src/ with babel.
@@ -333,4 +328,4 @@ module.exports = {
     tls: "empty",
     child_process: "empty"
   }
-};
+});
