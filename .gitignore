@@ -61,7 +61,7 @@ typings/
 .next
 
 # built component library
-/lib
+#/lib
 
 # built docs
 /docs
