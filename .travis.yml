@@ -12,9 +12,10 @@ after_script:
   - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
 
 before_deploy:
-  - cd lib
+  - cd ./lib
 
 deploy:
+  skip_cleanup: true
   provider: npm
   email: andy@leftshoedevelopment.com
   api_key:
