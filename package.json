@@ -44,7 +44,9 @@
     "build:es": "cross-env BABEL_MODULE_MODE=es NODE_ENV=production babel ./src/components --out-dir ./lib/index.es.js --ignore spec.js",
     "build:css": "cpx \"./src/components/**/*.css\" ./lib",
     "coverage": "npm run test -- --coverage",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
+    "preversion": "npm test",
+    "postversion": "npm run build:lib && git add -A lib && git push && git push --tags"
   },
   "jest": {
     "collectCoverageFrom": [
