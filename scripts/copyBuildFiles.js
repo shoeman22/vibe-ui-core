@@ -59,6 +59,7 @@ function createPackageFile() {
         version,
         description,
         main: "./index.js",
+        module: "./index.es.js/index.js",
         keywords,
         repository,
         license,

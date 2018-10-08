@@ -3,6 +3,7 @@
   "homepage": "http://shoeman22.github.io/vibe-ui-core/",
   "version": "3.1.0",
   "main": "./lib/index.js",
+  "module": "./lib/index.es.js/index.js",
   "private": true,
   "engines": {
     "node": ">=10.11.0"
