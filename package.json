@@ -47,8 +47,8 @@
     "build:css": "cpx \"./src/components/**/*.css\" ./lib",
     "coverage": "npm run test -- --coverage",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
-    "preversion": "npm run test:ci",
-    "postversion": "npm run build:lib && git push --tags"
+    "preversion": "npm run test:ci && npm run build:lib",
+    "postversion": "git push --tags"
   },
   "jest": {
     "collectCoverageFrom": [
