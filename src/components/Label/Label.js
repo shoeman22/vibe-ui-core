@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-/** Label with required field display, htmlFor, and block styling and dot options */
+/** Label with required field display, htmlFor, and block styling and dot optionsssss */
 function Label({ htmlFor, label, required, requiredDotColor }) {
   return (
     <label style={{ display: "block" }} htmlFor={htmlFor}>
