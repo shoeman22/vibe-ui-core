@@ -54,7 +54,7 @@ function createPackageFile() {
       // to avoid accidentally publishing from there, and change the name
       // to ps-react-build, to mimic material-ui.
       const minimalPackage = {
-        name: "pluralsight-reusable-components-cra",
+        name: "vibe-ui-core-test",
         author,
         version,
         description,
