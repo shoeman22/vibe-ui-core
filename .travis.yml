@@ -22,9 +22,13 @@ deploy:
     local_dir: build
     on:
       branch: master
+      tags: false
 
   - provider: npm
     email: "andy@leftshoedevelopment.com"
+    local_dir: lib
     api_key: $npm_token
+    skip_cleanup: true
     on:
+      branch: master
       tags: true
