@@ -15,11 +15,18 @@ before_deploy:
   - cd ./lib
 
 deploy:
-  skip_cleanup: true
-  provider: npm
-  email: andy@leftshoedevelopment.com
-  api_key:
-    secure: fAPbC6Utne/ofRJWHWuEXdbdW2HwvTH5vF1iYAuOxaaajgFbSZl60gd7kA/8Uhtc49GiTAakIPMz8IZLLrMUzZkrPxBZIp/jDOpOAA3JlOLSWISNDz3MG4q6d6Ny46Xz++PXNRXev16BdyghgCwx6Bn4G4b5Yf+acdeMF6TvNPw9L7ABEdFJY5P3MikElQmF/7vW85uDDmWxWBBM8DbgBNzBgwWE7KHq3Pnlc2kspYfb657/DpgSjeJCADvFeAohrBPxwWKHOHPhpHElHQrOa8+7uVD6W7/Ze2R5tBtPlxVpC0pxcuHeLzG8NUo+Yny98W2D861oNPE5OfaB0dpqhMGV0+fJhNFs2CzQvB8UNkc8kzdMKp7k/kc/++JCZnlvHuiKyvDvEhKnyOq0nlWjJ8shq2B4nMzoz6bBwW+vYyMZWOe0tl3rBLSqtnndQe0nNAaaXzAbpHehObCmu1Jev+rFlFnKjj0aKiXu4aB0I6Jpz3HiQ6OJu48lUSz6MU9X3Dd+RI7iZgkwGkCWmZ3cl28s0PmtMZRtw6t4cW96jzrUqlKzh0DnfFqtCd25XDKnuQvqOmu64mdYLzZeG9+trJMf/B8Lzs5NiaTDqwm+7dZeV7NtF6k1qAxxgHeLl5fSZlaOuWJYu+OKM314a+ns4y3wi67XKSQFNeHjuGwmcGI=
-  on:
+  - provider: npm
+    skip_cleanup: true
+    email: andy@leftshoedevelopment.com
+    api_key:
+      secure: fAPbC6Utne/ofRJWHWuEXdbdW2HwvTH5vF1iYAuOxaaajgFbSZl60gd7kA/8Uhtc49GiTAakIPMz8IZLLrMUzZkrPxBZIp/jDOpOAA3JlOLSWISNDz3MG4q6d6Ny46Xz++PXNRXev16BdyghgCwx6Bn4G4b5Yf+acdeMF6TvNPw9L7ABEdFJY5P3MikElQmF/7vW85uDDmWxWBBM8DbgBNzBgwWE7KHq3Pnlc2kspYfb657/DpgSjeJCADvFeAohrBPxwWKHOHPhpHElHQrOa8+7uVD6W7/Ze2R5tBtPlxVpC0pxcuHeLzG8NUo+Yny98W2D861oNPE5OfaB0dpqhMGV0+fJhNFs2CzQvB8UNkc8kzdMKp7k/kc/++JCZnlvHuiKyvDvEhKnyOq0nlWjJ8shq2B4nMzoz6bBwW+vYyMZWOe0tl3rBLSqtnndQe0nNAaaXzAbpHehObCmu1Jev+rFlFnKjj0aKiXu4aB0I6Jpz3HiQ6OJu48lUSz6MU9X3Dd+RI7iZgkwGkCWmZ3cl28s0PmtMZRtw6t4cW96jzrUqlKzh0DnfFqtCd25XDKnuQvqOmu64mdYLzZeG9+trJMf/B8Lzs5NiaTDqwm+7dZeV7NtF6k1qAxxgHeLl5fSZlaOuWJYu+OKM314a+ns4y3wi67XKSQFNeHjuGwmcGI=
+    ? on
     tags: true
     repo: shoeman22/vibe-ui-core
+  - provider: pages
+    skip_cleanup: true
+    github_token: $github_token
+    local_dir: ../build
+    on:
+      branch: master
+      tags: false
