@@ -1,6 +1,6 @@
 # Vibe UI Core
 
-A collection of React UI components for the Vibe platform.
+A collection of React UI components for the Vibe platform132.
 
 Documentation: [https://shoeman22.github.io/vibe-ui-core/](https://shoeman22.github.io/vibe-ui-core/)
 
