@@ -49,8 +49,8 @@
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "preversion": "npm run test:ci && npm run build:lib",
     "postversion": "git push && git push --tags",
-    "lint": "standard",
-    "lint:fix": "standard --fix"
+    "lint": "eslint --ignore-path=.gitignore .",
+    "lint:fix": "npm run lint -- --fix"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -158,8 +158,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test:ci",
-      "pre-push": "npm run test:ci"
+      "pre-commit": "npm-run-all lint test:ci",
+      "pre-push": "npm-run-all lint test:ci"
     }
   }
 }

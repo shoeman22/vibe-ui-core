@@ -1,12 +1,12 @@
-const env = require("babel-preset-env").buildPreset;
+// const env = require('babel-preset-env').buildPreset
 
 module.exports = {
   presets: [
     [
-      "env",
+      'env',
       {
-        modules: process.env.BABEL_MODULE_MODE === "es" ? false : "commonjs"
+        modules: process.env.BABEL_MODULE_MODE === 'es' ? false : 'commonjs'
       }
     ]
   ]
-};
+}

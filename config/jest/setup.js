@@ -1,2 +1,2 @@
-require("../polyfills");
-require("./setupEnzyme");
+require('../polyfills')
+require('./setupEnzyme')
