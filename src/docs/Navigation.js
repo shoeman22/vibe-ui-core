@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Navigation = ({ components }) => (
   <ul className="navigation">
@@ -9,10 +9,10 @@ const Navigation = ({ components }) => (
       </li>
     ))}
   </ul>
-);
+)
 
 Navigation.propTypes = {
   components: PropTypes.arrayOf(PropTypes.object).isRequired
-};
+}
 
-export default Navigation;
+export default Navigation

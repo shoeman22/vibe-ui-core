@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Props = ({ props }) => (
   <table className="props">
@@ -19,15 +19,15 @@ const Props = ({ props }) => (
           <td>{props[key].description}</td>
           <td>{props[key].type.name}</td>
           <td>{props[key].defaultValue && props[key].defaultValue.value}</td>
-          <td>{props[key].required && "X"}</td>
+          <td>{props[key].required && 'X'}</td>
         </tr>
       ))}
     </tbody>
   </table>
-);
+)
 
 Props.propTypes = {
   props: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
-};
+}
 
-export default Props;
+export default Props

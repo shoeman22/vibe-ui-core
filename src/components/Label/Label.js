@@ -1,14 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
 /** Label with required field display, htmlFor, and block styling and dot !!!!!!!!! */
-function Label({ htmlFor, label, required, requiredDotColor }) {
+function Label ({
+  htmlFor, label, required, requiredDotColor
+}) {
   return (
-    <label style={{ display: "block" }} htmlFor={htmlFor}>
-      {label}
-      {required && <span style={{ color: requiredDotColor }}> *</span>}
+    <label style={{ display: 'block' }} htmlFor={htmlFor}>
+      {label}{required && <span style={{ color: requiredDotColor }}> *</span>}
     </label>
-  );
+  )
 }
 
 Label.propTypes = {
@@ -23,11 +24,11 @@ Label.propTypes = {
 
   /** Color for required dot */
   requiredDotColor: PropTypes.string
-};
+}
 
 Label.defaultProps = {
   required: false,
-  requiredDotColor: "red"
-};
+  requiredDotColor: 'red'
+}
 
-export default Label;
+export default Label
