@@ -1,7 +1,7 @@
 {
   "name": "vibe-ui-core-test-build-template",
   "homepage": "http://shoeman22.github.io/vibe-ui-core/",
-  "version": "19.0.0",
+  "version": "20.0.0",
   "main": "./lib/index.js",
   "module": "./lib/index.es.js/index.js",
   "private": true,
